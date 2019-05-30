@@ -1,44 +1,48 @@
-<h1 id="titleName">It's Burger Time!</h1>
+<h1 id="titleName">Burger Time!</h1>
 
-<img src="assets/images/favicon.jpg">
+<img class="mx-auto d-block" src="assets/images/favicon.jpg">
 
-<h2>Chow Down on Some Juicy, Beefy Goodness!</h2>
+<h4 id="eatList">Chow Down on Some Juicy, Beefy Goodness!</h4>
 
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  <li>
-    {{burger_name}}
-    <button class="eatBurger" data-id="{{this.id}}" eatenValue="0">EAT THE BURGER!
+{{#each burgers}}
+{{#unless devoured}}
+<div class="container-fluid" id="burgerList">
+  <div class="row justify-content-center">
+    <div id="eachBurger">{{burger_name}}</div>
+    <button class="eatBurger" data-id="{{this.id}}" eatenValue="0" id="eachButton">NOM NOM!
     </button>
-  </li>
-  {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Ready For Another Round?</h2>
-
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  <li>
-    {{burger_name}}
-    <button class="reorderBurger" data-id="{{this.id}}">REORDER!</button>
-    <button class="deleteBurger" data-id="{{this.id}}">DELETE</button>
-  </li>
-  {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a burger!</h2>
-
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burg">Burger Name:</label>
-    <input type="text" id="burg" name="name">
   </div>
+</div>
+</li>
+{{/unless}}
+{{/each}}
 
-  <button type="submit">Add Burger</button>
+<h4 id="eatenList">Ready For Another Round?</h4>
 
-</form>
+{{#each burgers}}
+{{#if devoured}}
+<div class="container-fluid" id="burgerList">
+  <div class="row justify-content-center">
+    <button id="reorderButton" class="reorderBurger" data-id="{{this.id}}">REORDER!</button>
+    <div id="eachBurgerEaten">{{burger_name}}</div>
+    <button id="deleteButton" class="deleteBurger" data-id="{{this.id}}"><i class="far fa-trash-alt"></i></button>
+  </div>
+</div>
+{{/if}}
+{{/each}}
+
+<h4 id="addBurger">Build Your Own!</h4>
+
+<div class="container-fluid">
+  <form class="create-form" id="formBurger">
+    <div class="row justify-content-center">
+      <div class="form-group">
+        <label for="burg">Burger Name:</label>
+        <input type="text" id="burg" name="name" maxlength="25">
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <button id="addButton" type="submit">ORDER UP!</button>
+    </div>
+  </form>
+</div>

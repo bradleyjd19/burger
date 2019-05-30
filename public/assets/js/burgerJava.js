@@ -54,7 +54,7 @@ $(document).ready( function() {
   $(".deleteBurger").on("click", function (event) {
     event.preventDefault();
     const id = $(this).data("id");
-    $.ajax("/api/burgers" + id, {
+    $.ajax("/api/burgers/" + id, {
       type: "DELETE"
     }).then(
       function () {
