@@ -1,5 +1,5 @@
 # burger
-"Burger Time" is a full stack application that utilizes
+"Burger Time" is a full stack application that utilizes the Model View Controller design pattern, using Node and MySQL to handle queries and routes, while Handlebars creates the HTML.
 
 # Instructions
 Simple...JUST EAT! Click on the "Nom Nom!" button to devour the corresponding burger. It will be queued up in the "Ready For Another Round?" area where you can reorder it or delete it. You can also create a new burger in the "Build Your Own!" section by typing in the name (25 character limit) and clicking the "Order Up!" button.
